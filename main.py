@@ -1,8 +1,6 @@
 import pygame
-import sys
 
-sys.path.append('engine')
-from engine import Engine
+from engine.engine import Engine
 
 pygame.init()
 

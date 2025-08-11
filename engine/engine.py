@@ -1,5 +1,7 @@
 import pygame
 
+from game.board import GameBoard
+
 class Engine:
 
     def __init__(self):
@@ -10,6 +12,9 @@ class Engine:
         self.game_window = pygame.display.set_mode((self.window_width, self.window_height))
         self.clock = pygame.time.Clock()
 
+        self.game_board = GameBoard(10, 0, 15, 20)
+        print(self.game_board)
+
     def get_close_keyevent(self, event):
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
@@ -18,7 +23,8 @@ class Engine:
     
     def draw_objects(self):
         #objects to draw:
-        
+        self.game_window.fill(self.window_fillcolor)
+
         pygame.display.update()
 
     def run_game_loop(self):
